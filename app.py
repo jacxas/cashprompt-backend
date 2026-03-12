@@ -1,5 +1,4 @@
 import os
-from pathlib import Path
 
 import streamlit as st
 
@@ -39,8 +38,8 @@ prompt = st.text_area(
 )
 
 st.info(
-    "Nota: para análisis multimodal real, sube tus archivos a una URL accesible y pégala abajo. "
-    "Este dashboard acepta URLs directas para enviar al endpoint de Grok."
+    "Nota: este dashboard previsualiza archivos locales, pero para análisis remoto en API "
+    "usa URLs públicas en el campo inferior."
 )
 media_urls_text = st.text_area(
     "URLs de medios (una por línea)",
@@ -69,9 +68,4 @@ if st.button("Consultar Grok", type="primary"):
                 st.error(f"Error al llamar la API de Grok: {exc}")
 
 st.divider()
-st.markdown(
-    "**Tip Pinokio:** agrega tu `GROK_API_KEY` en variables de entorno y ejecuta `streamlit run app.py`."
-)
-
-Path(".streamlit").mkdir(exist_ok=True)
-Path(".streamlit/config.toml").write_text("""[server]\nheadless = true\nport = 8501\naddress = \"0.0.0.0\"\n""", encoding="utf-8")
+st.markdown("**Tip Pinokio:** define `GROK_API_KEY` y ejecuta el botón de `pinokio.js`.")

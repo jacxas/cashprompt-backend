@@ -1,6 +1,6 @@
 # CashPrompt Backend - Grok Media Dashboard
 
-Dashboard básico para trabajar con **imágenes y videos** usando la API de **Grok** (xAI), preparado para correr localmente o desde **Pinokio**.
+Dashboard para trabajar con **imágenes y videos** usando la API de **Grok** (xAI), preparado para correr localmente o desde **Pinokio**.
 
 ## Requisitos
 
@@ -29,12 +29,19 @@ Abre `http://localhost:8501`.
 
 1. Carga imagen/video para vista previa local.
 2. Añade prompt.
-3. (Opcional) Pega URLs públicas de imagen/video para análisis multimodal.
+3. (Opcional) Pega URLs públicas de imagen/video para análisis remoto en la API.
 4. Presiona **Consultar Grok**.
 
 ## Ejecutar en Pinokio
 
 Este repo incluye `pinokio.js` para arrancar el dashboard con un botón.
+
+## Sugerencias para mejorar
+
+- Guardar historial de prompts/respuestas en SQLite para comparar iteraciones.
+- Agregar plantillas de prompt por caso de uso (ads, reels, miniaturas).
+- Implementar caché local por hash (`prompt + media_urls`) para reducir costo de API.
+- Añadir métricas simples (latencia, tokens, errores) visibles en sidebar.
 
 ## Tests
 
