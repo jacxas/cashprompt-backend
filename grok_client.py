@@ -9,6 +9,8 @@ except ModuleNotFoundError:
 
 load_dotenv()
 
+XAI_BASE_URL = "https://api.x.ai/v1"
+
 
 def _get_api_key() -> str:
     api_key = os.getenv("GROK_API_KEY", "").strip()
@@ -42,10 +44,16 @@ def _extract_content(response: Any) -> str:
 
     message = getattr(choices[0], "message", None)
     content = getattr(message, "content", None)
-    if content is None or content == "":
+    if content is None:
         raise ValueError("Grok response content was empty.")
 
     return content
+
+
+def _build_client() -> Any:
+    from openai import OpenAI
+
+    return OpenAI(api_key=_get_api_key(), base_url=XAI_BASE_URL)
 
 
 def call_grok(
@@ -55,9 +63,7 @@ def call_grok(
     max_tokens: int = 1000,
     media_urls: list[str] | None = None,
 ) -> str:
-    from xai_sdk import Grok
-
-    client = Grok(api_key=_get_api_key())
+    client = _build_client()
     response = client.chat.completions.create(
         model=model,
         messages=build_messages(prompt, media_urls),
@@ -70,14 +76,16 @@ def call_grok(
 def call_grok_streaming(
     prompt: str,
     model: str = "grok-2-latest",
+    temperature: float = 0.7,
+    max_tokens: int = 1000,
     media_urls: list[str] | None = None,
 ) -> Iterable[str]:
-    from xai_sdk import Grok
-
-    client = Grok(api_key=_get_api_key())
+    client = _build_client()
     stream = client.chat.completions.create(
         model=model,
         messages=build_messages(prompt, media_urls),
+        temperature=temperature,
+        max_tokens=max_tokens,
         stream=True,
     )
 

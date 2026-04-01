@@ -5,7 +5,7 @@ Dashboard para trabajar con **imágenes y videos** usando la API de **Grok** (xA
 ## Requisitos
 
 - Python 3.10+
-- Una clave válida de Grok API
+- Una clave válida de la API de Grok
 
 ## Instalación
 
@@ -27,7 +27,7 @@ Abre `http://localhost:8501`.
 
 ## Uso rápido
 
-1. Carga imagen/video para vista previa local.
+1. Carga una imagen o un video para vista previa local.
 2. Añade prompt.
 3. (Opcional) Pega URLs públicas de imagen/video para análisis remoto en la API.
 4. Presiona **Consultar Grok**.
