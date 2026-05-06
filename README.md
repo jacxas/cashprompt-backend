@@ -69,3 +69,25 @@ API disponible en: http://localhost:3001
 ## Licencia
 
 MIT
+
+## Diseño de app local de IA
+
+- Ver propuesta detallada: `docs/LOCAL_LINUX_AI_STUDIO.md`
+
+- Arquitectura técnica de alto nivel: `docs/ARCHITECTURE_HIGH_LEVEL.md`
+
+- Diseño CLI y estructura de proyecto: `docs/CLI_COMMAND_TREE_AND_PROJECT_STRUCTURE.md`
+
+- Resumen técnico de decisiones: `docs/TECHNICAL_DECISION_SUMMARY.md`
+
+- Especificación técnica reorganizada: `docs/PRODUCT_TECHNICAL_SPEC_REWRITE.md`
+
+- Arquitectura implementable (alto nivel): `docs/ARCHITECTURE_IMPLEMENTABLE_HIGH_LEVEL.md`
+
+- Contrato implementable de CLI: `docs/CLI_IMPLEMENTATION_CONTRACT.md`
+
+- Política de conflictos de especificación: `docs/SPEC_CONFLICT_POLICY.md`
+
+- Implementación inicial de estructura de módulos: `docs/IMPLEMENTATION_NEXT_STEPS.md`
+
+- Evaluación del estado (OS vs plataforma): `docs/SYSTEM_STATUS_ASSESSMENT.md`
