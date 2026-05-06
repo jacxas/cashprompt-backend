@@ -1,5 +1,29 @@
 # CashPrompt Backend
 
+
+## Estado del proyecto
+
+**Respuesta directa:** este repositorio **no** es todavía un sistema operativo completo; actualmente es una base documental y estructural para una plataforma local de IA sobre Linux.
+
+### Alcance actual
+
+- Especificación de producto.
+- Arquitectura técnica de alto nivel.
+- Diseño de CLI y flujos de trabajo.
+- Base documental para una futura implementación.
+
+### Qué falta para llamarlo “sistema operativo completo”
+
+- Capa de sistema operativo real o integración profunda con una distribución base.
+- Gestión de hardware, procesos, memoria, almacenamiento y dispositivos a nivel sistema.
+- Seguridad, permisos y políticas de ejecución del sistema.
+- Instalación y distribución como sistema arrancable o plataforma base equivalente.
+- Operación, mantenimiento y actualizaciones como base del sistema.
+
+### Conclusión técnica de alcance
+
+El objetivo realista actual es una plataforma/aplicación local de IA para Linux, no un sistema operativo completo.
+
 Backend para agentes CashPrompt - Sistema que genera, vende y entrega automáticamente prompts personalizados vía IA.
 
 ## Descripción
