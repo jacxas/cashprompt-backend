@@ -122,7 +122,7 @@ Este repositorio mantiene el contexto de **CashPrompt Backend** y además incluy
 
 
 - Plan MVP v0 y congelación de contrato: `docs/MVP_V0_IMPLEMENTATION_PLAN.md`
-- Contrato CLI v0: `docs/contracts/cli_v0.md`
+- Contrato CLI v0: `docs/contracts/app_cli_contract_v0.md`
 - Esquema sidecar v0: `docs/contracts/sidecar_v0.schema.json`
 - Migración inicial SQLite: `storage/migrations/0001_init.sql`
 - Config base: `config/defaults/app.toml`

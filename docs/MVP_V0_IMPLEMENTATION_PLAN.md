@@ -49,7 +49,7 @@ Este MVP prueba CLI, persistencia, ciclo de jobs y ejecución local en un único
 - `storage/migrations/0001_init.sql`
 - `config/defaults/app.toml`
 - especificación JSON sidecar v0 en `docs/contracts/sidecar_v0.schema.json`
-- documentación de contrato CLI v0 en `docs/contracts/cli_v0.md`
+- documentación de contrato CLI v0 en `docs/contracts/app_cli_contract_v0.md`
 
 ## 6) Riesgos y mitigación
 
