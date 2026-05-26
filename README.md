@@ -126,3 +126,5 @@ Este repositorio mantiene el contexto de **CashPrompt Backend** y además incluy
 - Esquema sidecar v0: `docs/contracts/sidecar_v0.schema.json`
 - Migración inicial SQLite: `storage/migrations/0001_init.sql`
 - Config base: `config/defaults/app.toml`
+
+- Gap analysis y acciones pendientes: `docs/GAP_ANALYSIS_NEXT_ACTIONS.md`
