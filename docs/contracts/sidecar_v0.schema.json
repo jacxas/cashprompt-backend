@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://local/app/sidecar_v0.schema.json",
+  "title": "SidecarV0",
+  "type": "object",
+  "required": [
+    "job_id",
+    "model",
+    "variant",
+    "seed",
+    "steps",
+    "cfg",
+    "device_used",
+    "timestamp",
+    "app_version"
+  ],
+  "properties": {
+    "job_id": { "type": "string" },
+    "model": { "type": "string" },
+    "variant": { "type": "string" },
+    "seed": { "type": "integer" },
+    "steps": { "type": "integer" },
+    "cfg": { "type": "number" },
+    "device_used": { "type": "string" },
+    "timestamp": { "type": "string", "format": "date-time" },
+    "app_version": { "type": "string" }
+  },
+  "additionalProperties": true
+}

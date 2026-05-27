@@ -1,0 +1,9 @@
+app_name = "app"
+models_dir = "~/.local/share/app/models"
+outputs_dir = "~/.local/share/app/outputs"
+cache_dir = "~/.local/share/app/cache"
+device_default = "auto"
+max_parallel_jobs = 2
+video_queue_limit = 1
+default_provider = "hf"
+json_logs = true
