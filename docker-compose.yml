@@ -1,7 +1,9 @@
 version: '3.9'
 services:
   api:
-    build: ./apps/api
+    build:
+      context: .
+      dockerfile: apps/api/Dockerfile
     ports:
       - '8000:8000'
     command: uvicorn apps.api.main:app --host 0.0.0.0 --port 8000 --reload
