@@ -1,0 +1,9 @@
+{
+  "name": "ai-os-monorepo",
+  "private": true,
+  "workspaces": ["apps/*", "packages/*"],
+  "scripts": {
+    "dev:web": "npm --workspace apps/web run dev",
+    "dev:api": "uvicorn apps.api.main:app --reload"
+  }
+}
