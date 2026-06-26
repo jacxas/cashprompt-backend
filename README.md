@@ -1,117 +1,110 @@
-# CashPrompt Backend
+<div align="center">
 
+# 💰 CashPrompt Backend
 
-## Estado del proyecto
+**Motor de generación y monetización de prompts con IA — API REST + agentes automáticos**
 
-**Respuesta directa:** este repositorio **no** es todavía un sistema operativo completo; actualmente es una base documental y estructural para una plataforma local de IA sobre Linux.
+[![Python](https://img.shields.io/badge/Python-3.11+-3776AB?logo=python&logoColor=white)](https://python.org)
+[![FastAPI](https://img.shields.io/badge/FastAPI-0.110-009688?logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-14+-336791?logo=postgresql&logoColor=white)](https://postgresql.org)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-### Alcance actual
+</div>
 
-- Especificación de producto.
-- Arquitectura técnica de alto nivel.
-- Diseño de CLI y flujos de trabajo.
-- Base documental para una futura implementación.
+---
 
-### Qué falta para llamarlo “sistema operativo completo”
+## 🧠 ¿Qué es CashPrompt?
 
-- Capa de sistema operativo real o integración profunda con una distribución base.
-- Gestión de hardware, procesos, memoria, almacenamiento y dispositivos a nivel sistema.
-- Seguridad, permisos y políticas de ejecución del sistema.
-- Instalación y distribución como sistema arrancable o plataforma base equivalente.
-- Operación, mantenimiento y actualizaciones como base del sistema.
+CashPrompt Backend es la capa de servidor de un sistema de **monetización de prompts con IA**. Permite a creadores generar, vender y entregar prompts personalizados de forma automática, integrando pagos y envíos digitales.
 
-### Conclusión técnica de alcance
+> **Alcance actual:** Plataforma/API local de IA para Linux. No es un sistema operativo — es una aplicación de backend escalable.
 
-El objetivo realista actual es una plataforma/aplicación local de IA para Linux, no un sistema operativo completo.
+## ✨ Características
 
-Backend para agentes CashPrompt - Sistema que genera, vende y entrega automáticamente prompts personalizados vía IA.
+- 🤖 Generación de prompts personalizados con IA (Gemini / OpenAI)
+- 💳 Sistema de pagos integrado (Stripe / PayPal)
+- 📦 Entrega automática de productos digitales
+- 🔑 Autenticación JWT segura
+- 📊 API REST documentada (Swagger / OpenAPI)
+- 🔔 Webhooks para eventos de pago y entrega
+- 📄 Arquitectura modular y extensible
 
-## Descripción
+## 🛠️ Stack Tecnológico
 
-CashPrompt Backend es un sistema completo que permite:
-- Generar prompts personalizados con IA
-- Gestionar ventas y pagos
-- Entregar contenido digital automáticamente
-- Monetizar prompts y contenido
+| Capa | Tecnología |
+|------|------------|
+| Backend | Python 3.11+, FastAPI |
+| Base de datos | PostgreSQL 14+ |
+| Caché | Redis 6.0+ |
+| IA | Gemini API / OpenAI API |
+| Pagos | Stripe / PayPal |
+| Deploy | Docker, Linux |
 
-## Características
+## 🚀 Inicio Rápido
 
-- ✅ Generación de prompts con IA
-- ✅ Sistema de pagos integrado
-- ✅ Gestión de usuarios
-- ✅ API REST completa
-- ✅ Autenticación JWT
-- ✅ Base de datos escalable
-- ✅ Webhooks para eventos
+### Prerequisitos
 
-## Requisitos
-
-- Node.js 18+
-- npm o yarn
+- Python 3.11+
 - PostgreSQL 14+
 - Redis 6.0+
 
-## Instalación
+### Instalación
 
 ```bash
 git clone https://github.com/jacxas/cashprompt-backend.git
 cd cashprompt-backend
-npm install
-npm run dev
+pip install -r requirements.txt
 ```
 
-API disponible en: http://localhost:3001
+### Configuración
 
-## Scripts
+```bash
+cp .env.example .env
+```
 
-- `npm run dev` - Desarrollo
-- `npm run build` - Compilar
-- `npm run start` - Producción
-- `npm run test` - Tests
-- `npm run db:migrate` - Migraciones
+```env
+DATABASE_URL=postgresql://user:password@localhost/cashprompt
+REDIS_URL=redis://localhost:6379
+GEMINI_API_KEY=tu_clave_aqui
+JWT_SECRET=tu_secreto_aqui
+STRIPE_SECRET_KEY=tu_clave_stripe
+```
 
-## API Endpoints
+### Ejecutar
+
+```bash
+python -m uvicorn main:app --reload
+```
+
+API disponible en: [http://localhost:8000](http://localhost:8000)  
+Docs interactivas: [http://localhost:8000/docs](http://localhost:8000/docs)
+
+## 📚 API Endpoints Principales
 
 ### Autenticación
-- `POST /api/auth/register` - Registrar
-- `POST /api/auth/login` - Login
-- `POST /api/auth/refresh` - Refrescar token
+- `POST /api/auth/register` — Registrar usuario
+- `POST /api/auth/login` — Login y obtención de JWT
+- `POST /api/auth/refresh` — Refrescar token
 
 ### Prompts
-- `GET /api/prompts` - Listar
-- `POST /api/prompts` - Crear
-- `GET /api/prompts/:id` - Obtener
-- `PUT /api/prompts/:id` - Actualizar
-- `DELETE /api/prompts/:id` - Eliminar
+- `GET /api/prompts` — Listar prompts disponibles
+- `POST /api/prompts` — Crear nuevo prompt
+- `GET /api/prompts/:id` — Obtener prompt por ID
+- `PUT /api/prompts/:id` — Actualizar prompt
+- `DELETE /api/prompts/:id` — Eliminar prompt
 
-## Documentación
+### Pagos
+- `POST /api/payments/checkout` — Iniciar pago
+- `POST /api/payments/webhook` — Webhook de Stripe/PayPal
 
-- [Node.js](https://nodejs.org/docs/)
-- [Express.js](https://expressjs.com/)
-- [PostgreSQL](https://www.postgresql.org/docs/)
+## 📁 Documentación Técnica
 
-## Licencia
+Ver carpeta `docs/` para arquitectura detallada:
 
-MIT
+- `docs/ARCHITECTURE_HIGH_LEVEL.md` — Arquitectura general
+- `docs/CLI_COMMAND_TREE_AND_PROJECT_STRUCTURE.md` — Estructura del proyecto
+- `docs/PRODUCT_TECHNICAL_SPEC_REWRITE.md` — Especificación técnica
 
-## Diseño de app local de IA
+## 📄 Licencia
 
-- Ver propuesta detallada: `docs/LOCAL_LINUX_AI_STUDIO.md`
-
-- Arquitectura técnica de alto nivel: `docs/ARCHITECTURE_HIGH_LEVEL.md`
-
-- Diseño CLI y estructura de proyecto: `docs/CLI_COMMAND_TREE_AND_PROJECT_STRUCTURE.md`
-
-- Resumen técnico de decisiones: `docs/TECHNICAL_DECISION_SUMMARY.md`
-
-- Especificación técnica reorganizada: `docs/PRODUCT_TECHNICAL_SPEC_REWRITE.md`
-
-- Arquitectura implementable (alto nivel): `docs/ARCHITECTURE_IMPLEMENTABLE_HIGH_LEVEL.md`
-
-- Contrato implementable de CLI: `docs/CLI_IMPLEMENTATION_CONTRACT.md`
-
-- Política de conflictos de especificación: `docs/SPEC_CONFLICT_POLICY.md`
-
-- Implementación inicial de estructura de módulos: `docs/IMPLEMENTATION_NEXT_STEPS.md`
-
-- Evaluación del estado (OS vs plataforma): `docs/SYSTEM_STATUS_ASSESSMENT.md`
+MIT © [jacxas](https://github.com/jacxas)
