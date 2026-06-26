@@ -8,7 +8,7 @@
 │                                                                              │
 │  [CLI avanzada]      [Servidor HTTP local opcional]      [UI futura Qt/GTK] │
 │  - comandos/jobs     - API OpenAI-like subset             - consume Core API │
-│  - salida human/json - streaming SSE                       - sin lógica propia│
+│  - salida humana/json - streaming SSE                      - sin lógica propia│
 └───────────────────────────────┬──────────────────────────────────────────────┘
                                 │ llamadas internas (Core API)
 ┌───────────────────────────────▼──────────────────────────────────────────────┐
